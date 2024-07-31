@@ -13,10 +13,6 @@ function speak(text) {
   }
 }
 
-function getRandomColor() {
-  return colors[Math.floor(Math.random() * colors.length)];
-}
-
 function generateUniqueOptions(correct, max) {
   const options = [correct];
   while (options.length < 3) {
@@ -56,7 +52,7 @@ function generateQuestion() {
       options: generateUniqueOptions(count.toString(), 7),
     };
   } else {
-    const color = getRandomColor();
+    const color = "Rosa";
     document.getElementById("unicorn-container").innerHTML =
       `<div class="unicorn" style="color: ${color.toLowerCase()}">🦄</div>`;
     const wrongColors = colors.filter((c) => c !== color);
