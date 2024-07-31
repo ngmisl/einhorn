@@ -6,20 +6,32 @@ body {
     background-color: #ffebf5;
     margin: 0;
     padding: 20px;
-    height: 100vh;
+    min-height: 100vh;
 }
 
-#unicorn {
-    width: 200px;
-    height: 200px;
-    background-color: #fff;
-    border-radius: 50%;
+#game-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    font-size: 100px;
+    max-width: 800px;
+    width: 100%;
+}
+
+h1 {
+    color: #ff74b9;
+    text-align: center;
+}
+
+#unicorn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.unicorn {
+    font-size: 50px;
+    margin: 5px;
 }
 
 #question {
@@ -33,6 +45,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
 .option {
@@ -54,18 +67,31 @@ body {
     margin-top: 20px;
     text-align: center;
     min-height: 30px;
+    margin-bottom: 20px;
 }
 
+#nextQuestion,
 #toggleSpeech {
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px 20px;
     background-color: #ff9ed4;
     border: none;
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+#nextQuestion:hover,
+#toggleSpeech:hover {
+    background-color: #ff74b9;
+}
+
+#toggleSpeech {
+    margin-top: 10px;
+    background-color: #a0d2ff;
 }
 
 #toggleSpeech:hover {
-    background-color: #ff74b9;
+    background-color: #70b8ff;
 }
