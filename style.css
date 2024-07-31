@@ -1,12 +1,13 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: #ffebf5;
-    margin: 0;
-    padding: 20px;
     min-height: 100vh;
+    margin: 0;
+    background-color: #ffebf5;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 #game-container {
@@ -15,27 +16,33 @@ body {
     align-items: center;
     max-width: 800px;
     width: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     color: #ff74b9;
     text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
 }
 
 #unicorn-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .unicorn {
-    font-size: 50px;
+    font-size: 60px;
     margin: 5px;
 }
 
 #question {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -49,13 +56,14 @@ h1 {
 }
 
 .option {
-    font-size: 20px;
-    padding: 10px 20px;
+    font-size: 18px;
+    padding: 10px 15px;
     background-color: #ff9ed4;
     border: none;
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin: 5px;
 }
 
 .option:hover {
@@ -63,18 +71,16 @@ h1 {
 }
 
 #feedback {
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 20px;
     text-align: center;
     min-height: 30px;
-    margin-bottom: 20px;
 }
 
-#nextQuestion,
 #toggleSpeech {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #ff9ed4;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #a0d2ff;
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -82,16 +88,33 @@ h1 {
     font-size: 16px;
 }
 
-#nextQuestion:hover,
-#toggleSpeech:hover {
-    background-color: #ff74b9;
-}
-
-#toggleSpeech {
-    margin-top: 10px;
-    background-color: #a0d2ff;
-}
-
 #toggleSpeech:hover {
     background-color: #70b8ff;
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .unicorn {
+        font-size: 50px;
+    }
+
+    #question {
+        font-size: 18px;
+    }
+
+    .option {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    #feedback {
+        font-size: 16px;
+    }
+
+    #toggleSpeech {
+        font-size: 14px;
+    }
 }
