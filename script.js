@@ -65,6 +65,18 @@ function generateQuestion() {
   }
 }
 
+function getColorStyle(color) {
+  const colorMap = {
+    Rot: "#FF0000",
+    Blau: "#0000FF",
+    Gelb: "#FFFF00",
+    Grün: "#008000",
+    Rosa: "#FFC0CB",
+    Lila: "#800080",
+  };
+  return colorMap[color] || "#FFC0CB"; // Default to pink if color not found
+}
+
 function displayQuestion(q) {
   document.getElementById("question").textContent = q.question;
   speak(q.question);
@@ -75,6 +87,10 @@ function displayQuestion(q) {
     button.className = "option";
     button.textContent = option;
     button.onclick = () => checkAnswer(option, q.answer);
+    if (q.question.includes("Farbe")) {
+      button.style.backgroundColor = getColorStyle(option);
+      button.style.color = option === "Gelb" ? "black" : "white"; // Ensure text is visible on yellow
+    }
     optionsContainer.appendChild(button);
   });
 }

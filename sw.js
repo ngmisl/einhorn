@@ -1,20 +1,23 @@
-self.addEventListener("install", (e) => {
-  e.waitUntil(
-    caches
-      .open("einhorn-store")
-      .then((cache) =>
-        cache.addAll([
-          "/",
-          "/index.html",
-          "/icon-192x192.png",
-          "/icon-512x512.png",
-        ]),
-      ),
+const CACHE_NAME = "unicorn-game-v1";
+const urlsToCache = [
+  "/",
+  "/index.html",
+  "/style.css",
+  "/script.js",
+  "/icon-192x192.png",
+  "/icon-512x512.png",
+];
+
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache)),
   );
 });
 
-self.addEventListener("fetch", (e) => {
-  e.respondWith(
-    caches.match(e.request).then((response) => response || fetch(e.request)),
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches
+      .match(event.request)
+      .then((response) => response || fetch(event.request)),
   );
 });

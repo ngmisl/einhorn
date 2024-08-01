@@ -1,10 +1,10 @@
 {
-  "name": "Einhorn Lernabenteuer",
-  "short_name": "Einhorn",
+  "name": "Unicorn Learning Game",
+  "short_name": "Unicorn Game",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffebf5",
-  "theme_color": "#ff9ed4",
+  "theme_color": "#ff74b9",
   "orientation": "portrait-primary",
   "icons": [
     {
